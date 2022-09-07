@@ -1,9 +1,10 @@
 import "./App.css";
+import MemberProfile from "./components/MemberProfile";
 
 function App() {
   return (
     <div className="App">
-      <h1>Virtual Assets Credit Cooperative</h1>
+      <MemberProfile />
     </div>
   );
 }
