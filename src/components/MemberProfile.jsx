@@ -1,5 +1,5 @@
-import React from "react";
-import { Col, Container, Row, Stack, Button } from "react-bootstrap";
+import { Col, Container, Row, Button, Card, Stack } from "react-bootstrap";
+import { BiEdit } from "react-icons/bi";
 
 export default function MemberProfile() {
   return (
@@ -7,106 +7,241 @@ export default function MemberProfile() {
       <section>
         <Container>
           <div>
-            <h1 className="text-center">Member's Profile</h1>
+            <h1 style={{ color: "#1F3F77" }}>Member's Profile</h1>
           </div>
-          <hr />
+          <hr style={{ border: "1px solid blue" }} />
 
           <Row>
-            <Col xs={6}>
-              <div className="text-center">
-                <img
-                  src="images/team1.webp"
-                  alt="team1"
-                  style={{ height: "200px", width: "150px" }}
-                  className="rounded"
-                />
+            <Col xs={12} md={8} lg={6}>
+              <Card
+                id="card1"
+                style={{
+                  width: "430px",
+                  height: "430px",
+                  borderRadius: "30px",
+                }}
+              >
+                <div
+                  className="py-3"
+                  style={{ display: "flex", justifyContent: "center" }}
+                >
+                  <Card.Img
+                    className="rounded-circle"
+                    style={{
+                      width: "225px",
+                      height: "225px",
+                      left: "162px",
+                      top: "202px",
+                    }}
+                    src="images/img1.png"
+                  />
+                </div>
+                <Card.Body>
+                  <Card.Title className="text-center text-light fs-3 fw-bold">
+                    Garcia, Michael C.
+                  </Card.Title>
+                  <br />
+                  <Card.Text className="text-center text-light">
+                    <div>Account Type: Individual</div>
+                    <div>Member Since: September 17, 2017</div>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <br />
+
+              <div
+                className="text-center text-light fw-bold fs-4"
+                style={{
+                  background: "#F6881F",
+                  height: "40px",
+                  width: "429px",
+                  borderRadius: "10px",
+                }}
+              >
+                Account Status: ACTIVE
               </div>
+              <br />
             </Col>
 
-            <Col xs={6}>
-              <div class="row justify-content-start">
-                <div class="fw-bold col-4">Name</div>
-                <div class="col-4">: Adam Smith</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold col-4">Address</div>
-                <div class="col-4">: Quezon City</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold col-4">Phone Number</div>
-                <div class="col-4">: 9999-999-999</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold col-4">Active</div>
-                <div class="col-4">: True</div>
+            <Col xs={12} md={8} lg={6}>
+              <Card id="card2" style={{ background: "#DFEBFF" }}>
+                <Card.Body>
+                  <div className="fs-4 fw-bold" style={{ color: "#F6881F" }}>
+                    Personal Details
+                  </div>
+                  <hr style={{ color: "#1F3F77" }} />
+                  <Stack direction="horizontal" gap={3}>
+                    <div
+                      className="fs-5"
+                      style={{ color: "#1F3F77", width: "235px" }}
+                    >
+                      Email Address
+                    </div>
+                    <div
+                      className="border fs-5 text-center"
+                      style={{
+                        border: "1px solid #1F3F77",
+                        borderRadius: "10px",
+                        width: "450px",
+                        height: "50px",
+                        color: "#1F3F77",
+                      }}
+                    >
+                      mikez.garcia@gmail.com
+                    </div>
+                  </Stack>
+                  <Stack direction="horizontal" gap={3}>
+                    <div
+                      className="fs-5"
+                      style={{ color: "#1F3F77", width: "235px" }}
+                    >
+                      Contact Number
+                    </div>
+                    <div
+                      className="border fs-5 text-center"
+                      style={{
+                        border: "1px solid #1F3F77",
+                        borderRadius: "10px",
+                        width: "450px",
+                        height: "50px",
+                        color: "#1F3F77",
+                      }}
+                    >
+                      09909990000
+                    </div>
+                  </Stack>
+                  <Stack direction="horizontal" gap={3}>
+                    <div
+                      className="fs-5"
+                      style={{ color: "#1F3F77", width: "235px" }}
+                    >
+                      Birthday
+                    </div>
+                    <div
+                      className="border fs-5 text-center"
+                      style={{
+                        border: "1px solid #1F3F77",
+                        borderRadius: "10px",
+                        width: "450px",
+                        height: "50px",
+                        color: "#1F3F77",
+                      }}
+                    >
+                      September 17, 1988
+                    </div>
+                  </Stack>
+                  <Stack direction="horizontal" gap={3}>
+                    <div
+                      className="fs-5"
+                      style={{ color: "#1F3F77", width: "235px" }}
+                    >
+                      Address
+                    </div>
+                    <div
+                      className="border fs-5 text-center"
+                      style={{
+                        border: "1px solid #1F3F77",
+                        borderRadius: "10px",
+                        width: "450px",
+                        height: "50px",
+                        color: "#1F3F77",
+                      }}
+                    >
+                      NCR
+                    </div>
+                  </Stack>
+                </Card.Body>
+              </Card>
+              <br />
+              <Card id="card3" style={{ background: "#DFEBFF" }}>
+                <Card.Body>
+                  <div className="fs-4 fw-bold" style={{ color: "#F6881F" }}>
+                    Employment Details
+                  </div>
+                  <hr />
+                  <Stack direction="horizontal" gap={3}>
+                    <div
+                      className="fs-5"
+                      style={{ color: "#1F3F77", width: "235px" }}
+                    >
+                      Occupation
+                    </div>
+                    <div
+                      className="border fs-5 text-center"
+                      style={{
+                        border: "1px solid #1F3F77",
+                        borderRadius: "10px",
+                        width: "450px",
+                        height: "50px",
+                        color: "#1F3F77",
+                      }}
+                    >
+                      Employee - Private Company
+                    </div>
+                  </Stack>
+                  <Stack direction="horizontal" gap={3}>
+                    <div
+                      className="fs-5"
+                      style={{ color: "#1F3F77", width: "235px" }}
+                    >
+                      Employer
+                    </div>
+                    <div
+                      className="border fs-5 text-center"
+                      style={{
+                        border: "1px solid #1F3F77",
+                        borderRadius: "10px",
+                        width: "450px",
+                        height: "50px",
+                        color: "#1F3F77",
+                      }}
+                    >
+                      Google Philippines
+                    </div>
+                  </Stack>
+                  <Stack direction="horizontal" gap={3}>
+                    <div
+                      className="fs-5"
+                      style={{ color: "#1F3F77", width: "235px" }}
+                    >
+                      Position
+                    </div>
+                    <div
+                      className="border fs-5 text-center"
+                      style={{
+                        border: "1px solid #1F3F77",
+                        borderRadius: "10px",
+                        width: "450px",
+                        height: "50px",
+                        color: "#1F3F77",
+                      }}
+                    >
+                      Senior Developer III
+                    </div>
+                  </Stack>
+                </Card.Body>
+              </Card>
+              <br />
+
+              <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                <Button
+                  id="button"
+                  className="fs-4 fw-bold text-center"
+                  style={{
+                    background: "#F6881F",
+                    borderRadius: "10px",
+                    height: "55px",
+                    border: "none",
+                  }}
+                >
+                  <span className="fs-3 fw-bold">
+                    <BiEdit />
+                  </span>
+                  Edit Details
+                </Button>
               </div>
             </Col>
           </Row>
-
-          <hr />
-
-          <Row>
-            <Col xs={6}>
-              <h2 className="text-center">Personal Details</h2>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Full Name</div>
-                <div class="fs-4 col-6">: Adam Smith</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Date of Birth</div>
-                <div class="fs-4 col-6">: Jan 14, 1994</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Address</div>
-                <div class="fs-4 col-6">: Quezon City</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Phone Number</div>
-                <div class="fs-4 col-6">: 9999-999-999</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Email Address</div>
-                <div class="fs-4 col-6">: Adam@gmail.com</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Government ID</div>
-                <div class="fs-4 col-6">: UMID</div>
-              </div>
-            </Col>
-
-            <Col xs={6}>
-              <h2 className="text-center">Identity Details</h2>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Mother's Name</div>
-                <div class="fs-4 col-6">: Samantha Smith</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Father's Name</div>
-                <div class="fs-4 col-6">: Anthony Smith</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Address</div>
-                <div class="fs-4 col-6">: Quezon City</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Civil Status</div>
-                <div class="fs-4 col-6">: Single</div>
-              </div>
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Spouse's Name</div>
-                <div class="fs-4 col-6">: N/A</div>
-              </div>
-
-              <div class="row justify-content-start">
-                <div class="fw-bold fs-4 col-4">Emergency Contact</div>
-                <div class="fs-4 col-6">: Samantha Smith</div>
-              </div>
-            </Col>
-          </Row>
-
-          <hr />
-
-          <Button className="d-grid col-6 mx-auto">Update Info</Button>
         </Container>
       </section>
     </>
