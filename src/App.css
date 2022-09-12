@@ -7,17 +7,20 @@ body {
 }
 
 hr {
-  border: 1px solid "#1F3F77";
-}
-
-#card1 {
-  background: #1F3F77;
+  border: 1px solid #1F3F77;
 }
 
 .border{
 background: #FFFFFF;
 border: 1px solid #1F3F77;
 border-radius: 10px;
+}
+
+#button {
+  background: #F6881F;
+  border-radius: 10px;
+  height: 55px;
+  border: none;
 }
 
 

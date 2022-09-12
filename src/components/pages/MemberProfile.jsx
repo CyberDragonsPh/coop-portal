@@ -9,22 +9,19 @@ export default function MemberProfile() {
           <div>
             <h1 style={{ color: "#1F3F77" }}>Member's Profile</h1>
           </div>
-          <hr style={{ border: "1px solid blue" }} />
+          <hr />
 
           <Row>
             <Col xs={12} md={8} lg={6}>
               <Card
-                id="card1"
                 style={{
                   width: "430px",
                   height: "430px",
                   borderRadius: "30px",
+                  background: "#1F3F77",
                 }}
               >
-                <div
-                  className="py-3"
-                  style={{ display: "flex", justifyContent: "center" }}
-                >
+                <div className="py-3 d-flex justify-content-center">
                   <Card.Img
                     className="rounded-circle"
                     style={{
@@ -64,7 +61,7 @@ export default function MemberProfile() {
             </Col>
 
             <Col xs={12} md={8} lg={6}>
-              <Card id="card2" style={{ background: "#DFEBFF" }}>
+              <Card style={{ background: "#DFEBFF" }}>
                 <Card.Body>
                   <div className="fs-4 fw-bold" style={{ color: "#F6881F" }}>
                     Personal Details
@@ -153,7 +150,7 @@ export default function MemberProfile() {
                 </Card.Body>
               </Card>
               <br />
-              <Card id="card3" style={{ background: "#DFEBFF" }}>
+              <Card style={{ background: "#DFEBFF" }}>
                 <Card.Body>
                   <div className="fs-4 fw-bold" style={{ color: "#F6881F" }}>
                     Employment Details
@@ -223,17 +220,8 @@ export default function MemberProfile() {
               </Card>
               <br />
 
-              <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                <Button
-                  id="button"
-                  className="fs-4 fw-bold text-center"
-                  style={{
-                    background: "#F6881F",
-                    borderRadius: "10px",
-                    height: "55px",
-                    border: "none",
-                  }}
-                >
+              <div className="d-flex justify-content-end">
+                <Button id="button" className="fs-4 fw-bold text-center">
                   <span className="fs-3 fw-bold">
                     <BiEdit />
                   </span>
