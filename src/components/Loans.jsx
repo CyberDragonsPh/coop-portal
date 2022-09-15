@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 
 export default function Loans() {
   return (
-    <section className="bg-light">
+    <section className="bg-light" id="loans">
       <div className="container-fluid d-flex">
         <div className="row position-relative">
           <div className="col-lg-12 col-md-auto bottom-0 d-none mx-auto pt-md-5 d-md-block">
@@ -18,7 +18,13 @@ export default function Loans() {
         <div className="row">
           <div className="col-lg-6 col-md-6 text-warning">
             <h4 className="text-center fw-bold text-Warning">
-              <Icon inline icon="bx:world" width="200" height="150" />
+              <Icon
+                inline
+                icon="bx:world"
+                width="200"
+                height="150"
+                style={{ marginLeft: "18rem" }}
+              />
               <br />
               ONLINE
             </h4>
@@ -28,7 +34,13 @@ export default function Loans() {
           </div>
           <div className="col-lg-6 col-md-6 p-lg-0 text-warning">
             <h4 className="text-center fw-bold text-Warning">
-              <Icon inline icon="bxs:check-shield" width="200" height="150" />
+              <Icon
+                inline
+                icon="bxs:check-shield"
+                width="200"
+                height="150"
+                style={{ marginLeft: "18rem" }}
+              />
               <br />
               SECURED
             </h4>
@@ -38,7 +50,13 @@ export default function Loans() {
           </div>
           <div className="col-lg-6 col-md-6 text-warning">
             <h4 className="text-center fw-bold text-Warning">
-              <Icon inline icon="bxs:timer" width="200" height="150" />
+              <Icon
+                inline
+                icon="bxs:timer"
+                width="200"
+                height="150"
+                style={{ marginLeft: "18rem" }}
+              />
               <br />
               FAST
             </h4>
@@ -53,6 +71,7 @@ export default function Loans() {
                 icon="fa6-solid:hand-holding-dollar"
                 width="170"
                 height="150"
+                style={{ marginLeft: "18rem" }}
               />
               <br />
               LOW INTEREST

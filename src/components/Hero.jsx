@@ -28,8 +28,13 @@ export default function Hero() {
               className="btn btn-light btn-xl text-warning fw-bold my-2"
               to="/login"
             >
-              <Icon icon="fa6-solid:arrow-right-to-bracket" />
-              LOGIN
+              <div className="d-flex">
+                <Icon
+                  icon="fa6-solid:arrow-right-to-bracket"
+                  className="fw-bold fs-5"
+                />
+                LOGIN
+              </div>
             </NavLink>
           </div>
         </div>

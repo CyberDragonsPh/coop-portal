@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function NavigationBar() {
   return (
@@ -34,36 +34,41 @@ export default function NavigationBar() {
           <Navbar.Collapse id="navbarSupportedContent">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink
-                  className="nav-link fw-bold text-light"
+                <Link
+                  className="nav-link fs-4 fw-bold text-light"
                   aria-current="page"
                   to="/"
                 >
                   HOME
-                </NavLink>
+                </Link>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link fw-bold text-light" to="/">
+                <a
+                  className="nav-link fs-4 fw-bold text-light"
+                  href="#about-us"
+                >
                   ABOUT US
-                </NavLink>
+                </a>
               </li>
+
               <li className="nav-item">
-                <NavLink className="nav-link fw-bold text-light" to="/">
-                  MEMBERSHIP
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link fw-bold text-light" to="/">
+                <a
+                  className="nav-link fs-4 fw-bold text-light"
+                  href="#investment"
+                >
                   INVESTMENT
-                </NavLink>
+                </a>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link fw-bold text-light" to="/">
+                <a className="nav-link fs-4 fw-bold text-light" href="#loans">
                   LOANS
-                </NavLink>
+                </a>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link fw-bold text-light" to="/">
+                <NavLink
+                  className="nav-link fs-4 fw-bold text-light"
+                  to="/forms"
+                >
                   FORMS
                 </NavLink>
               </li>

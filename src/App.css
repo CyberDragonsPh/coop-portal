@@ -10,15 +10,6 @@
 body {
         font-family: var(--sm-font);
 }
-body::before {
-        display: block;
-        content: '';
-        height: 60px;
-}
-
-body, html {
-  height: 100%;
-}
 
 
 /* Navbar */
