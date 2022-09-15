@@ -6,7 +6,7 @@ const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
   return (
     <>
       <section>
-        <Container>
+        <Container className="container-fluid">
           <div>
             <h1 style={{ color: "#1F3F77" }}>Member's Profile</h1>
           </div>
@@ -226,10 +226,12 @@ const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
                   className="fs-4 fw-bold text-center"
                   onClick={(event) => handleEditClick(event, contact)}
                 >
-                  <span className="fs-3 fw-bold">
-                    <BiEdit />
-                  </span>
-                  Edit Details
+                  <div className="d-flex">
+                    <span className="fs-3 fw-bold">
+                      <BiEdit />
+                    </span>
+                    Edit Details
+                  </div>
                 </Button>
               </div>
 

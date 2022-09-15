@@ -67,9 +67,9 @@ export default function NavigationBar() {
               <li className="nav-item">
                 <NavLink
                   className="nav-link fs-4 fw-bold text-light"
-                  to="/forms"
+                  to="/members"
                 >
-                  FORMS
+                  MEMBERSPROFILE
                 </NavLink>
               </li>
             </ul>

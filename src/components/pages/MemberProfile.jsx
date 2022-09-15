@@ -125,29 +125,25 @@ export default function MemberProfile() {
   };
 
   return (
-    <div className="app-container">
+    <div id="members" className="app-container">
       <form onSubmit={handleEditFormSubmit}>
-        <table>
-          <tbody>
-            {contacts.map((contact) => (
-              <Fragment>
-                {editContactId === contact.id ? (
-                  <EditableRow
-                    editFormData={editFormData}
-                    handleEditFormChange={handleEditFormChange}
-                    handleCancelClick={handleCancelClick}
-                  />
-                ) : (
-                  <ReadOnlyRow
-                    contact={contact}
-                    handleEditClick={handleEditClick}
-                    handleDeleteClick={handleDeleteClick}
-                  />
-                )}
-              </Fragment>
-            ))}
-          </tbody>
-        </table>
+        {contacts.map((contact) => (
+          <Fragment>
+            {editContactId === contact.id ? (
+              <EditableRow
+                editFormData={editFormData}
+                handleEditFormChange={handleEditFormChange}
+                handleCancelClick={handleCancelClick}
+              />
+            ) : (
+              <ReadOnlyRow
+                contact={contact}
+                handleEditClick={handleEditClick}
+                handleDeleteClick={handleDeleteClick}
+              />
+            )}
+          </Fragment>
+        ))}
       </form>
 
       {/* <h2>Add a Contact</h2>
