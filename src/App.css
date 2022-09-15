@@ -1,10 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap"
-);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
 
-
-body {
-  font-family: 'Roboto', sans-serif;
+:root{
+        --lg-font: 'Kaisei Tokumin', serif;
+        --sm-font: 'Poppins', sans-serif;
+        --orange: #eea812;
+        --green: #83eb88;;
 }
+body {
+        font-family: var(--sm-font);
+}
+body::before {
+        display: block;
+        content: '';
+        height: 60px;
+}
+
+body, html {
+  height: 100%;
+}
+
+
+/* Navbar */
+.nav-link:hover{
+  color: var(--orange) !important;
+  cursor: pointer;
+}
+.navbar-nav > li{
+  margin-left:35px;
+  margin-right:33px;
+}
+
+/* Member */
 
 hr {
   border: 1px solid #1F3F77;
@@ -16,6 +43,7 @@ border: 1px solid #1F3F77;
 border-radius: 10px;
 }
 
+
 #button {
   background: #F6881F;
   border-radius: 10px;
@@ -24,6 +52,33 @@ border-radius: 10px;
   color: white;
 }
 
+/* hero */
+
+.bgx {
+  /* The image used */
+  background-image: url("../public/images/bghero.png");
+
+  /* Full height */
+  height: 60%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* invest */
+
+.bgo {
+  background-color: var(--orange) !important;
+}
+
+.bglp{
+  background-color: rgb(253, 222, 227);
+}
+#apply{
+  position:absolute; bottom:0;
+}
 
 
 
