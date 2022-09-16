@@ -4,14 +4,15 @@ import "firebase/compat/firestore";
 
 // Your web app's Firebase configuration
 //vac-coop-mikez firebase app
-const firebaseConfig = {
-  apiKey: "AIzaSyBVm14jaHgYmTANbnsoCoh2wHabh5GSKv0",
-  authDomain: "vac-coop-mikez.firebaseapp.com",
-  projectId: "vac-coop-mikez",
-  storageBucket: "vac-coop-mikez.appspot.com",
-  messagingSenderId: "881260355801",
-  appId: "1:881260355801:web:b27673b6d9995ec5fb9ec8",
-};
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBtQiCvAkiFfHrKh84qMDDm_FUQucWrAJE",
+    authDomain: "mini-project2-f24bf.firebaseapp.com",
+    projectId: "mini-project2-f24bf",
+    storageBucket: "mini-project2-f24bf.appspot.com",
+    messagingSenderId: "1034567851386",
+    appId: "1:1034567851386:web:d18ffae5cf7e90cb8a8ac3"
+  };
 
 // Use this to initialize the firebase App
 const firebaseapp = firebase.initializeApp(firebaseConfig);

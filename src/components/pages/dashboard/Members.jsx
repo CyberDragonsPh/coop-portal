@@ -1,8 +1,8 @@
 import React, { useState, Fragment } from "react";
 import { nanoid } from "nanoid";
-import data from "../../mock-data.json";
-import ReadOnlyRow from "./Edit/ReadOnlyRow";
-import EditableRow from "./Edit/EditableRow";
+import data from "../../../mock-data.json";
+import ReadOnlyRow from "./../Edit/ReadOnlyRow";
+import EditableRow from "./../Edit/EditableRow";
 
 export default function MemberProfile() {
   const [contacts, setContacts] = useState(data);

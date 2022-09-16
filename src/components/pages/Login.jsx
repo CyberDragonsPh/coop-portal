@@ -2,8 +2,63 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import NotYetMemberBtn from "../../components/utilities/NotYetMemberBtn";
 import LoginAlt from "../../components/utilities/LoginAlt";
+import { Link, useNavigate } from "react-router-dom";
+
+import { bindActionCreators } from "redux";
+import { useCollection } from "react-firebase-hooks/firestore";
+import { db, auth } from "../../firebase";
+import { useDispatch, useSelector } from "react-redux";
+import * as actionUser from "../../redux/actionUser";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useEffect, useState } from "react";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Validation
+  const [invalidUser, setInvalidUser] = useState(false);
+
+  const [userList] = useCollection(db.collection("users"));
+  const [user] = useAuthState(auth);
+  const { loginUser } = bindActionCreators(actionUser, useDispatch());
+  const navigate = useNavigate();
+  const activeUser = useSelector((state) => state.activeUser);
+
+  useEffect(() => {
+    if (user || activeUser.email) {
+      // navigate home page
+      navigate("/members");
+    }
+  });
+
+  const checkIfValid = () => {
+    let isValid = false;
+    // Check if there's no user created
+    if (userList.docs.length === 0) {
+      setInvalidUser(true);
+      return false;
+    }
+    // Check if user exist
+    userList.docs.forEach((user) => {
+      if (user.data().email === email && user.data().password === password) {
+        setInvalidUser(false);
+        isValid = true;
+      } else {
+        setInvalidUser(true);
+      }
+    });
+    //return statement
+    return isValid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (checkIfValid()) {
+      loginUser({ email });
+    }
+  };
+
   return (
     // Fullpage Container
     <div
@@ -25,7 +80,7 @@ export default function Login() {
 
         {/* RightSide Container */}
         <div className="bg-primary p-5 flex-col justify-around rounded-r-[25px] rounded-l-[25px] md:rounded-l-none">
-          <form className="container">
+          <div className="container">
             {/* Logo */}
             <div className="flex flex-col items-center mb-4">
               <img
@@ -49,17 +104,26 @@ export default function Login() {
             </h4>
 
             {/* INPUTS */}
-            <div className="flex flex-col items-end">
-              <input
-                className="w-full h-12 rounded-lg mt-5 placeholder:text-2xl placeholder:p-3"
-                type="text"
-                placeholder="Email Address"
-              />
-              <input
-                className="w-full h-12 rounded-lg mt-3 placeholder:text-2xl placeholder:p-3"
-                type="password"
-                placeholder="Password"
-              />
+            <form onSubmit={handleSubmit}>
+              <div className="flex flex-col items-end">
+                <input
+                  className="w-full h-12 rounded-lg mt-5 placeholder:text-2xl placeholder:p-3"
+                  type="text"
+                  placeholder="Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  isInvalid={invalidUser}
+                />
+
+                <input
+                  className="w-full h-12 rounded-lg mt-3 placeholder:text-2xl placeholder:p-3"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  isInvalid={invalidUser}
+                />
+              </div>
 
               <button class="group overflow-hidden mt-4 px-6 h-12 rounded-lg flex items-center bg-secondary hover:bg-orange-600">
                 <Icon className="text-2xl text-white" icon="entypo:login" />
@@ -67,7 +131,7 @@ export default function Login() {
                   Login
                 </span>
               </button>
-            </div>
+            </form>
             {/* End of INPUTS */}
             <LoginAlt />
             {/* Not Yet Member? */}
@@ -75,7 +139,7 @@ export default function Login() {
               <img className="mb-2" src="./images/hr-mv.png" alt="hr" />
               <NotYetMemberBtn />
             </div>
-          </form>
+          </div>
         </div>
         {/* End of RightSide Container */}
       </div>
