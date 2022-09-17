@@ -14,7 +14,7 @@ export default function DashboardNav() {
         {/* logout icon */}
         <button className="btn">
           <Icon className="btn-icon" icon="fa:sign-out" />
-          <h2 className="btn-txt">Inbox</h2>
+          <h2 className="btn-txt">Logout</h2>
         </button>
       </div>
     </div>
