@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import { NavLink } from "react-router-dom";
 
 // import { Icon } from "@iconify/react";
 
@@ -28,13 +29,15 @@ export default function SidePanel() {
 
       <div className="flex flex-col items-center w-[300px]">
         {/* Home */}
-        <button className="sidebar-btn ">
-          <Icon
-            className="sidebar-icon text-[60px]"
-            icon="dashicons:admin-home"
-          />
-          <h2 className="sidebar-txt">Home</h2>
-        </button>
+        <NavLink to="/">
+          <button className="sidebar-btn ">
+            <Icon
+              className="sidebar-icon text-[60px]"
+              icon="dashicons:admin-home"
+            />
+            <h2 className="sidebar-txt">Home</h2>
+          </button>
+        </NavLink>
         {/* Wallet */}
         <button className="sidebar-btn">
           <Icon

@@ -116,7 +116,7 @@ export default function Register() {
       {/* registration form container */}
       <div className=" bg-primary h-screen w-full sm:m-4 sm:max-w-[770px] sm:max-h-[620px]  sm:rounded-3xl sm:shadow-lg md:shadow-gray-600">
         {/* form starts here */}
-        <div className="w-full mt-10 sm:mt-7" action="/">
+        <div className="w-full mt-10 sm:mt-7">
           {/* Logo */}
           <div className="flex flex-col items-center justify-center m-4 md:flex-row">
             <img
@@ -137,135 +137,123 @@ export default function Register() {
           <img className="w-full h-1" src="./images/hr-mv.png" alt="hr" />
           {/* Inputs Starts Here */}
 
-          <Form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="flex flex-col ml-5 mr-5  ">
               {/* First Name */}
 
-              <Form.Group className="flex flex-row  mt-4 justify-between ">
-                <Form.Label
+              <div className="flex flex-row  mt-4 justify-between ">
+                <label
                   className="hidden font-sans font-regular text-white text-center md:flex md:text-3xl"
                   htmlFor="firstname"
                 >
                   First Name
-                </Form.Label>
+                </label>
 
-                <Form.Control
+                <input
                   className="h-12 w-full md:max-w-md  rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
                   type="text"
+                  required
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   isInvalid={invalidFirstName}
                   placeholder="First Name"
-                ></Form.Control>
-                <Form.Control.Feedback type="invalid">
-                  firstname already exist.
-                </Form.Control.Feedback>
-              </Form.Group>
+                />
+              </div>
 
               {/* Middle Name */}
-              <Form.Group className="flex flex-row mt-4 justify-between">
-                <Form.Label
+              <div className="flex flex-row mt-4 justify-between">
+                <label
                   className="hidden font-sans font-regular text-white text-center md:flex md:text-3xl"
                   htmlFor="middlename"
                 >
                   Middle Name
-                </Form.Label>
-                <Form.Control
+                </label>
+                <input
                   className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
                   type="text"
+                  required
                   value={middleName}
                   onChange={(e) => setMiddleName(e.target.value)}
                   isInvalid={invalidMiddleName}
                   placeholder="Middle Name"
-                ></Form.Control>
-                <Form.Control.Feedback type="invalid">
-                  middlename already exist.
-                </Form.Control.Feedback>
-              </Form.Group>
+                />
+              </div>
 
               {/* Last Name */}
-              <Form.Group className="flex flex-row justify-between mt-4">
-                <Form.Label
+              <div className="flex flex-row justify-between mt-4">
+                <label
                   className="hidden font-sans font-regular text-white text-center md:flex md:text-3xl"
                   htmlFor="lastname"
                 >
                   Last Name
-                </Form.Label>
-                <Form.Control
+                </label>
+                <input
                   className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
                   type="text"
+                  required
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   isInvalid={invalidLastName}
                   placeholder="Last Name"
-                ></Form.Control>
-                <Form.Control.Feedback type="invalid">
-                  lastname already exist.
-                </Form.Control.Feedback>
-              </Form.Group>
+                />
+              </div>
 
               {/* Email Address */}
-              <Form.Group className="flex flex-row justify-between mt-4">
-                <Form.Label
+              <div className="flex flex-row justify-between mt-4">
+                <label
                   className="hidden font-sans font-regular text-white text-center md:flex md:text-3xl"
                   htmlFor="email"
                 >
                   Email Address
-                </Form.Label>
-                <Form.Control
+                </label>
+                <input
                   className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
                   type="email"
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   isInvalid={invalidEmail}
                   placeholder="Email Address"
-                ></Form.Control>
-                <Form.Control.Feedback type="invalid">
-                  email already exist.
-                </Form.Control.Feedback>
-              </Form.Group>
+                />
+              </div>
 
               {/* Password */}
-              <Form.Group className="flex flex-row justify-between mt-4">
-                <Form.Label
+              <div className="flex flex-row justify-between mt-4">
+                <label
                   className="hidden font-sans font-regular text-white text-center md:flex md:text-3xl"
                   htmlFor="password"
                 >
                   Password
-                </Form.Label>
-                <Form.Control
+                </label>
+                <input
                   className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
+                  required
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   isInvalid={invalidPassword}
                   placeholder="Password"
-                ></Form.Control>
-                <Form.Control.Feedback type="invalid">
-                  The password confirmation does not match
-                </Form.Control.Feedback>
-              </Form.Group>
+                />
+              </div>
 
               {/* Confirm Password */}
-              <Form.Group className="flex flex-row justify-between items-center  mt-4 ">
-                <Form.Label
+              <div className="flex flex-row justify-between items-center  mt-4 ">
+                <label
                   className="hidden font-sans font-regular text-white text-center md:flex md:text-3xl"
                   htmlFor="confirmPassword"
                 >
                   Confirm Password
-                </Form.Label>
-                <Form.Control
+                </label>
+                <input
                   className="h-12 w-full md:max-w-md rounded-lg placeholder:text-3xl placeholder:opacity-60 placeholder:pl-4"
+                  required
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   isInvalid={invalidPassword}
                   placeholder="Confirm Password"
-                ></Form.Control>
-                <Form.Control.Feedback type="invalid">
-                  The password confirmation does not match
-                </Form.Control.Feedback>
-              </Form.Group>
+                />
+              </div>
               {/* Inputs Ends Here */}
 
               {/* Modal */}
@@ -299,7 +287,7 @@ export default function Register() {
                 </button>
               </div>
             </div>
-          </Form>
+          </form>
           <p className="text-center mb-4 text-warning">
             Already have an account?
             <Link to="/login" className="text-warning">

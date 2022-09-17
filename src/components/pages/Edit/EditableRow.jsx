@@ -1,5 +1,4 @@
 import React from "react";
-import { Icon } from "@iconify/react";
 
 const EditableRow = ({
   editFormData,
@@ -8,7 +7,7 @@ const EditableRow = ({
 }) => {
   return (
     <>
-      // Members Profile // Main Container
+      {/* // Members Profile // Main Container */}
       <div className="w-full h-full flex flex-col items-center">
         {/* Contents Container */}
         <div className="w-full h-[55px] mt-4">
@@ -166,7 +165,7 @@ const EditableRow = ({
               {/* End Input */}
             </div>
 
-            <div className="flex flex-col items-end pb-7 rounded-2xl">
+            <div className="flex flex-row items-end pb-7 rounded-2xl">
               <button
                 class="group overflow-hidden mt-4 px-6 h-12 rounded-lg flex items-center bg-secondary hover:bg-orange-600 md:mt-0"
                 type="submit"

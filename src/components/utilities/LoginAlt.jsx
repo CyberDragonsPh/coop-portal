@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { auth, googleProvider } from "../../firebase";
 import { GoogleAuthProvider } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useSelector } from "react-redux";
 
 export default function LoginAlt() {
   const provider = new GoogleAuthProvider();
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+  const activeUser = useSelector((state) => state.activeUser);
+
+  useEffect(() => {
+    if (user || activeUser.googleSignIn) {
+      // navigate home page
+      navigate("/");
+    }
+  });
 
   const googleSignIn = (e) => {
     e.preventDefault();

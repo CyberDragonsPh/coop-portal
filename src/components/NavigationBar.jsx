@@ -1,81 +1,67 @@
 import React from "react";
-import { Container, Navbar } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Icon } from "@iconify/react";
+import { NavLink } from "react-router-dom";
+// import OpenNavbarMobile from "./utilities/OpenNavbarMobile";
 
 export default function NavigationBar() {
   return (
-    <>
-      <div className="container-fluid border-bottom border-warning bg-primary">
-        <NavLink
-          to="/"
-          className="d-flex align-items-center justify-content-between"
-        >
-          <img
-            className="img-fluid"
-            src="./images/Logo.png"
-            alt="Site Icon"
-            style={{ height: "40px" }}
-          />
+    // Opened Menu Navbar - Mobile View
+    // <OpenNavbarMobile />
+    // Closed Menu Navbar - Mobile View
+    // Navbar Container
+    <div className="h-full w-full">
+      {/* upper nav */}
+      <div className="bg-primary w-full flex flex-row justify-between">
+        <div className="flex flex-col items-center justify-between">
+          {/* Logo */}
+          <div className="flex flex-row m-4">
+            <img className="h-12 " src="/images/logo-white-orange.png" alt="" />
+            {/* Logo Text */}
+            <div className="flex flex-col items-start font-sans text-white">
+              <h2 className="hidden sm:flex ml-4">
+                Virtual Asset Credit Cooperative
+              </h2>
+              <h3 className="hidden sm:flex  ml-4">
+                Community Building, Enriching through Technology
+              </h3>
+            </div>
+            {/* Logo Text Ends Here */}
+          </div>
+        </div>
+        {/* Menu Icon Mobile Only - Default Hidden*/}
 
-          <img
-            className="border-start border-warning img-fluid"
-            src="./images/talk.png"
-            alt="Site Icon"
-            style={{ height: "40px" }}
-          />
-        </NavLink>
+        {/* Messenger Support B */}
+        <div className="hidden md:flex flex-col items-center justify-center mr-7 border-l-2 border-secondary">
+          <div className="flex flex-row items-center justify-center space-x-3 pl-2">
+            {/* msgr logo */}
+            <Icon className="text-5xl text-white" icon="cib:messenger" />
+            <div className="flex flex-col items-start justify-center font-sans text-white">
+              <h2 className="font-semibold text-2xl">TALK TO US</h2>
+              <h3 className="font-extralight text-xl">Available 24/7</h3>
+            </div>
+          </div>
+        </div>
+        <Icon
+          className="text-secondary text-7xl mr-4 md:hidden"
+          icon="charm:menu-hamburger"
+        />
       </div>
-
-      <Navbar expand="lg" className=" text-center bg-primary">
-        <Container>
-          <Navbar.Toggle>
-            <span className="navbar-toggler-icon"></span>
-          </Navbar.Toggle>
-          <Navbar.Collapse id="navbarSupportedContent">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link
-                  className="nav-link fs-4 fw-bold text-light"
-                  aria-current="page"
-                  to="/"
-                >
-                  HOME
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link fs-4 fw-bold text-light"
-                  href="#about-us"
-                >
-                  ABOUT US
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a
-                  className="nav-link fs-4 fw-bold text-light"
-                  href="#investment"
-                >
-                  INVESTMENT
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link fs-4 fw-bold text-light" href="#loans">
-                  LOANS
-                </a>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link fs-4 fw-bold text-light"
-                  to="/members"
-                >
-                  MEMBERSPROFILE
-                </NavLink>
-              </li>
-            </ul>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+      {/* end upper nav */}
+      <div className="hidden bg-primary w-full md:flex flex-row justify-between border-t-2 border-secondary pt-3 pb-3">
+        <ul className="flex flex-row items-center justify-around w-full h-full font-sans font-semibold text-white text-lg tracking-wider">
+          <NavLink to="/">
+            <li className="hover:text-secondary">HOME</li>
+          </NavLink>
+          <a href="#about-us">
+            {" "}
+            <li className="hover:text-secondary">ABOUT US</li>
+          </a>
+          <li className="hover:text-secondary">MEMBERSHIP</li>
+          <li className="hover:text-secondary">INVESTMENT</li>
+          <li className="hover:text-secondary">LOANS</li>
+          <li className="hover:text-secondary">FORMS</li>
+        </ul>
+      </div>
+    </div>
   );
 }

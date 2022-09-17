@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
   return (
     <>
-      // Members Profile // Main Container
+      {/* // Members Profile // Main Container */}
       <div className="w-full h-full flex flex-col items-center">
         {/* Contents Container */}
         <div className="w-full h-[55px] mt-4">

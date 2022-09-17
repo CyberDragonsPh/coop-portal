@@ -1,72 +1,71 @@
-import React from "react";
 import { Icon } from "@iconify/react";
-
+import React from "react";
 export default function Footer() {
   return (
-    <footer className="bg-primary">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-auto d-flex align-items-center justify-content-center py-5">
-            <img
-              src="./images/Logo.png"
-              alt="Virtual Assets"
-              className="img-fluid"
-              style={{ height: "60px" }}
-            />
-          </div>
-          <div className="col-lg-4 col-md-4 col-sm-auto align-items-center justify-content-center py-5">
-            <h4 className="text-center brand text-white fw-bold">CONTACT US</h4>
-            <p className="text-white text-center mt-3">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae ratione ut veniam cupiditate nam qui assumenda animi
-              enim quos aperiam.
-            </p>
-          </div>
-          <div className="col-lg-4 col-md-4 col-sm-auto align-items-center justify-content-center py-5">
-            <h4 className="text-center brand text-white fw-bold">
-              OPERATING HOURS
-            </h4>
-            <p className="text-white text-center mt-3">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae ratione ut veniam cupiditate nam qui assumenda animi
-              enim quos aperiam.
-            </p>
-          </div>
-          <div className="col-lg-4 col-md-4 col-sm-auto align-items-center justify-content-center py-5">
-            <h4 className="text-center brand text-white fw-bold">ADDRESS</h4>
-            <p className="text-white text-center mt-3">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae ratione ut veniam cupiditate nam qui assumenda animi
-              enim quos aperiam.
-            </p>
-          </div>
-          <div className="col-lg col-md-12 col-sm-12 d-flex align-items-center justify-content-center">
-            <ul className="list-unstyled d-flex">
-              <li className="text-white fs-1 me-3">
-                <Icon icon="cib:facebook" />
-              </li>
-              <li className="text-white fs-1 me-3">
-                <Icon icon="ant-design:twitter-outlined" />
-              </li>
-              <li className="text-white fs-1 me-3">
-                <Icon icon="ant-design:instagram-outlined" />
-              </li>
-              <li className="text-white fs-1 me-3">
-                <Icon icon="bxl:tiktok" />
-              </li>
-              <li className="text-white fs-1 me-3">
-                <Icon icon="ant-design:github-filled" />
-              </li>
-              <li className="text-white fs-1 me-3">
-                <Icon icon="bxl:discord-alt" />
-              </li>
-              <li className="text-white fs-1 me-3">
-                <Icon icon="ant-design:youtube-filled" />
-              </li>
-            </ul>
+    // Main Container
+    <div className="bg-primary w-full h-screen">
+      {/* Footer Container */}
+      <div className="flex flex-col items-center justify-between font-sans text-white pt-5 pb-5 space-y-7 ">
+        {/* Logo */}
+        <div className="flex flex-col items-center justify-center">
+          <img
+            className="h-12"
+            src="./images/logo-white-orange.png"
+            alt="logo"
+          />
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="font-semibold text-xl">
+              Virtual Asset Credit Cooperative
+            </h1>
+            <h3 className="font-extralight text-center text-sm pl-5 pr-5">
+              Community Building, Enriching through Technology
+            </h3>
           </div>
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-3">
+          {/* Contact Us */}
+          <div className="flex flex-col items-center justify-center m-3">
+            <h1 className="font-semibold text-xl">Contact Us</h1>
+            <h3 className="font-extralight text-center text-sm pl-5 pr-5">
+              (032) 7521-7000
+            </h3>
+            <h3 className="font-extralight text-center text-sm pl-5 pr-5">
+              helpdesk@vaccoop.com
+            </h3>
+          </div>
+          {/* Operating Hours */}
+          <div className="flex flex-col items-center justify-center m-3">
+            <h1 className="font-semibold text-xl">Operating Hours</h1>
+            <h3 className="font-extralight text-center text-sm pl-5 pr-5">
+              Monday - Friday 9:00 AM - 5:00 PM
+            </h3>
+            <h3 className="font-extralight text-center text-sm pl-5 pr-5">
+              Saturday 10:00 AM - 4:00 PM
+            </h3>
+          </div>
+          {/* Address */}
+          <div className="flex flex-col items-center justify-center m-3">
+            <h1 className="font-semibold text-xl">Address</h1>
+            <h3 className="font-extralight text-center text-sm pl-5 pr-5">
+              777 Wallstreet, Golden Village, Quezon City, Philippines
+            </h3>
+          </div>
+        </div>
+        <div className="flex flex-row items-center">
+          <a href="https://www.facebook.com/VirtualAssetCreditCooperative">
+            <Icon className="text-3xl m-3" icon="akar-icons:facebook-fill" />
+          </a>
+          <a href="https://www.facebook.com/VirtualAssetCreditCooperative">
+            <Icon className="text-4xl m-3" icon="ant-design:instagram-filled" />
+          </a>
+          <a href="https://www.facebook.com/VirtualAssetCreditCooperative">
+            <Icon
+              className="text-4xl m-3"
+              icon="ant-design:twitter-circle-filled"
+            />
+          </a>
+        </div>
       </div>
-    </footer>
+    </div>
   );
 }

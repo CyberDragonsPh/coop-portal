@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/pages/Home";
 import NavigationBar from "./components/NavigationBar";
 import Login from "./components/pages/Login";
-import Register from "./components/pages/Register";
 import MainDashboard from "./components/pages/dashboard/MainDashboard";
+import Register from "./components/pages/Register";
 
 function App() {
   return (

@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
-import AboutUs from "../AboutUs";
 import Footer from "../Footer";
-import Hero from "../Hero";
-import Investment from "../Investment";
-import Loans from "../Loans";
-import Newsletter from "../Newsletter";
 import * as actionUser from "../../redux/actionUser";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
+import AboutUs from "../sections/AboutUs";
+import Hero from "../sections/Hero";
+import HeroIcons from "../sections/HeroIcon";
+import Services from "../sections/Services";
+import Testimonials from "../sections/Testimonials";
 
 export default function Home() {
   const [user] = useAuthState(auth);
@@ -33,10 +33,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Investment />
       <AboutUs />
-      <Loans />
-      <Newsletter />
+      <HeroIcons />
+      <Services />
+      <Testimonials />
       <Footer />
     </>
   );

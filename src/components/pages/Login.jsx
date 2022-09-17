@@ -2,7 +2,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import NotYetMemberBtn from "../../components/utilities/NotYetMemberBtn";
 import LoginAlt from "../../components/utilities/LoginAlt";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { bindActionCreators } from "redux";
 import { useCollection } from "react-firebase-hooks/firestore";
@@ -107,8 +107,9 @@ export default function Login() {
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col items-end">
                 <input
-                  className="w-full h-12 rounded-lg mt-5 placeholder:text-2xl placeholder:p-3"
+                  className="w-full h-12 rounded-lg mt-5 placeholder:text-2xl placeholder:p-3 peer border border-slate-400"
                   type="text"
+                  required
                   placeholder="Email Address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -117,6 +118,7 @@ export default function Login() {
 
                 <input
                   className="w-full h-12 rounded-lg mt-3 placeholder:text-2xl placeholder:p-3"
+                  required
                   type="password"
                   placeholder="Password"
                   value={password}
